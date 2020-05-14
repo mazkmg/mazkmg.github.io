@@ -50,14 +50,67 @@ function checkofclick (n)
 	}
 
 
-
-
 function list(item)
-{
+	{
 
 	while (item < 10)
-	{
-	$("#itemList").append(`<li>тут должно было быть число</li>`);
-	item++;
+		{
+		$("#itemList").append(`<li>${item}</li>`);
+		item++;
+		}
 	}
+
+let customNumber = 0;
+
+function returnValue(a)
+	{
+	return a * 2;
+
+	}
+
+customNumber = returnValue(10) + 10;
+console.log(customNumber)
+
+
+//добавляет новый элемент в списке
+function addElement()
+{
+	let text = prompt('Введите название элемента');
+	console.log (text);
+
+	let html = `
+	<li>
+		<div class="itemList">
+		<span class="target" onmouseenter="toggleColor(this, true)" onmouseleave="toggleColor(this)" >${text}</span>
+		<button class="delete" onclick="deleteElement(this.parentNode.parentNode)">x</button>
+		</div>
+	</li>`;
+
+	$("#itemList").append(html);
 }
+
+function deleteElement(element)
+{
+ console.log("Удалить элемент");
+  console.log(element);
+ $(element).replaceWith();
+}
+
+
+function toggleColor(element, active = false) {
+    console.log(element, active);
+
+    let activeColor = 'red';
+    let defaultColor = '#333';
+
+    if (active) {
+        $(element).css('color', activeColor);
+    } else {
+        $(element).css('color', defaultColor);
+    }
+}
+
+$(function()
+{
+	console.log ("start pege")
+});
