@@ -1,6 +1,9 @@
 body
 {
- background: url("https://github.com/mazkmg/mazkmg.github.io/images /background3.jpg");
+ background: url("./images/background3.jpg");
+ background-repeat: repeat;
+background-size: cover;
+background-position: center;
 } 
 
 
