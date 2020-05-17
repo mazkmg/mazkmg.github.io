@@ -6,14 +6,14 @@ background-size: cover;
 background-position: center;
 } 
 
-.header
+.menu_header
 {
 display: block; 
 margin: 0 auto; 
-display: block;
+display: block; 
 }
 
-.header ul
+.menu_header ul
 {
 list-style: none; /*убираем маркеры списка*/
 margin: 0; /*убираем отступы*/
@@ -23,7 +23,7 @@ height: 50px; /*задаем высоту*/
 
 }
 
-.header a 
+.menu_header a 
 {
 text-decoration: none; /*убираем подчеркивание текста ссылок*/
 color:#FDF5E6; /*меняем цвет ссылок*/
@@ -34,13 +34,13 @@ display: block;
 border-right: 2px solid #FDF5E6; /*добавляем бордюр справа*/
 }
 
-.header li
+.menu_header li
 {
 float:left; /*Размещаем список горизонтально для реализации меню*/
 
 }
 
-.header li:hover
+.menu_header li:hover
 {
 float:left; /*Размещаем список горизонтально для реализации меню*/	
 background:#000000;/*добавляем эффект при наведении*/
