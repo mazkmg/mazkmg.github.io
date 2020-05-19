@@ -1,6 +1,12 @@
 let defaultNumber = 0;
 let isDec = false;
 let item = 0;
+let menulinks = [
+"Home",
+"Media",
+"Contancs",
+"Follow",
+];
 
 
 function inc(n)
@@ -110,7 +116,17 @@ function toggleColor(element, active = false) {
     }
 }
 
-$(function()
+function generateMenuLinks()
 {
-	console.log ("start pege")
+	let html = "";
+
+	for(const item of menulinks){
+		html += `<li><a href="//">${item}</a></li>`;
+	}
+	return html;
+}
+
+
+$(function(){
+$("#menulinks").append(generateMenuLinks())
 });
