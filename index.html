@@ -8,17 +8,22 @@
 	<link  type="text/css" rel="stylesheet" href="./css/index.css">
 </head> 
 <body>
-<div class="header" >
-			<ul id="menulinks">
-				
-			</ul>
+<div class="header">
+	<div class="fixed-position">
+
+		<div id="menuLinks"></div>
+
+		<div id="avatarFrame">
+
+		</div>
+	</div>
 </div>
 	
 <div class="content">
 
 	<div  class="logo"> 
 		<img width="400" src ="./images/penrose.png">
-		<h1>Что будет, если нажать на кнопку?</h1>
+		<h1><span id = "userName"></span>, что будет, если нажать на кнопку?</h1>
 	</div>
 
 	<button class="button" onclick="inc(defaultNumber)">увеличить</button> <br>
@@ -31,9 +36,25 @@
 
 	<button class="button" onclick="addElement()">добавить элемент</button><br>
 
+	<button class="button" onclick="setValue()">Сохранить значение</button><br>
+
+	<button id="toggle" class="button" onclick="toggleValue()">Сохранить</button><br>
+
+	<button class="button" onclick="payment()">Запустить калькулятор</button><br>
+
+	<div id="hidevalue">
+
+		<div style="margin-right: 5px">Привет,</div>
+
+		<div id="value_mother"></div>
+
+	</div>
+
+	<span id="calculation_output"></span>
+
+
 	<ul id="itemList"></ul>
 
-</div>
 
 <div class="footer">
 

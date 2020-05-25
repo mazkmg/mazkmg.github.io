@@ -1,15 +1,14 @@
 let defaultNumber = 0;
 let isDec = false;
 let item = 0;
-let menulinks = [
-"Home",
-"Media",
-"Contancs",
-"Follow",
+let menuLinks = [
+"Главная",
+"Услуги",
+"Проекты",
+"Контакты",
 ];
 
-
-function inc(n)
+function inc(n) //увеличиваем число на 1
 {
 n = n+1;
 console.log ("число увеличивается на 1", n);
@@ -17,7 +16,7 @@ console.log ("число увеличивается на 1", n);
 defaultNumber = n;
 }
 
-function dec (n)
+function dec (n) //уменьшаем число на 1
 {
 n = n-1;
 console.log ("число уменьшено на 1", n);
@@ -95,6 +94,46 @@ function addElement()
 	$("#itemList").append(html);
 }
 
+
+function payment()
+{	
+let summ = prompt("Введите ваш баланс"); //баланс
+	summ=Number(summ); //приводим баланс к числу
+	let summ_purchase = prompt("Сумма одного телефона");//сумма одного телефона
+	summ_purchase=Number(summ_purchase); //приводим к числу сумма одного телефона
+	let number_telephone = 0; //кол-во купленных телефонов
+	let tax = 0.01; //налог
+	let purchase_amount = 0; //сумма покупок
+    let summ_exit = 0 //остаток на балансе
+
+while (summ_exit>=purchase_amount)
+{
+purchase_amount = purchase_amount + (summ_purchase + (summ_purchase * 0.01)) // покупаем один телефон
+summ_exit = summ - (summ_purchase + (summ_purchase * 0.01)) // вычитаем покупку из суммы баланса
+number_telephone++ // увеличиваем кол-во купленных телефонов на 1
+}
+let calculation_result = `
+		<div>
+			<ul>
+				<li>Изначальный баланс: <span>${summ}</span> рублей</li>
+				<li>Сумма покупки составила: <span> ${purchase_amount}	</span>рублей</li>
+				<li>Стоимоть одного телефона: <span>${summ_purchase}</span> рублей</li>
+				<li>Вы можете купить:<span> ${number_telephone} </span> телефонов</li>	
+				<li>Налог составил: <span>${tax} рублей </span>	</li>
+				
+			</ul>
+		</div>`;
+
+		$("#calculation_output").append(calculation_result);
+
+console.log("изначальнй баланс "+ summ)
+console.log("сумма покупок"+ purchase_amount)
+console.log("стоимость одного телефона"+ summ_purchase)
+console.log("налог составил "+tax)
+console.log("кол-во купленных телефонов"+ number_telephone)
+}
+
+
 function deleteElement(element)
 {
  console.log("Удалить элемент");
@@ -116,17 +155,72 @@ function toggleColor(element, active = false) {
     }
 }
 
-function generateMenuLinks()
-{
-	let html = "";
+let user = "";
 
-	for(const item of menulinks){
-		html += `<li><a href="//">${item}</a></li>`;
+function generateMenuLinks() {
+	let html = '';
+
+	for (const item of menuLinks) {
+		html += `<a class="item-link" href="">${item}</a>`;
 	}
+
 	return html;
+}
+
+function toggleValue()
+{
+	let value = prompt("Введи сюда что-нибудь позя-зя-зя")
+	$("#value_mother").html(value)
+}
+
+function hidetoggleValue(element, active = false)
+{
+ let hideelement = $("#hidetoggle");
+ let hidebutton = $("#hidebutton");
+ let bool = $(hidebutton).hasClass("active")
+
+ if(bool)
+ {
+ 	$(hidebutton).removeClass("active");
+ 	$(hidebutton).text("Скрыть")
+ 	$(hideelement).show()
+ }
+ else {
+ 	$(hidebutton).addClass("active")
+ 	$(hidebutton).text("Показать")
+ 	$(hideelement).hide()
+
+ }
+
+console.log(hidebutton)
+console.log($(hidebutton).hasClass("active"))
+console.log(bool)
 }
 
 
 $(function(){
-$("#menulinks").append(generateMenuLinks())
+
+$('#avatarFrame').append('<div class="avatar"></div>');
+$("#menuLinks").append(generateMenuLinks())
+$('#menuLinks').children().each(function () {
+
+		$(this).on('mouseenter', () => {
+			$(this).css('color', 'Aqua');
+		});
+
+		$(this).on('mouseleave', () => {
+			$(this).css('color', 'inherit');
+		});
+	});
+
+
+if(!localStorage.getItem("name"))
+{
+ localStorage.setItem("name","Илья"); //записываем в кэш моем имя
+}
+else{
+	user = localStorage.getItem("name");
+	}
+
+$("#userName").html(user)
 });
