@@ -197,6 +197,37 @@ console.log($(hidebutton).hasClass("active"))
 console.log(bool)
 }
 
+let modalCounter = 0;
+function createPopaup()
+{
+	console.log ("Создаем попап");
+
+	let container = document.createElement("div");
+	let textModal = prompt("Укажите текст")
+	let id = "modal_" + modalCounter
+
+	container.classList.add("modal")
+
+	container.setAttribute("id", id)
+
+	container.innerHTML = `<div class="modal-content">
+    <span class="close">&times;</span>
+    <p>${textModal}</p>
+  </div>`
+
+	console.log(container)
+
+	modalCounter++
+	$("#modal").html(container)
+	container.style.display = "flex"
+	container.style.color = "black"
+
+	let closeButton = $("#" + id).children().children("span")
+	$(closeButton).on("click", function(){
+	$("#" + id).replaceWith()
+	})
+
+}
 
 $(function(){
 
@@ -234,6 +265,8 @@ $("button").on("click", function()
 
 	}
 	console.log($(this).text())
+
+
 })
 
 
