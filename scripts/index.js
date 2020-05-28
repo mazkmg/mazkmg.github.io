@@ -2,10 +2,10 @@ let defaultNumber = 0;
 let isDec = false;
 let item = 0;
 let menuLinks = [
-"Главная",
-"Услуги",
-"Проекты",
-"Контакты",
+"ГЛАВНАЯ",
+"УСЛУГИ",
+"ПРОЕКТЫ",
+"КОНТАКТЫ",
 ];
 
 function inc(n) //увеличиваем число на 1
@@ -24,7 +24,7 @@ console.log ("число уменьшено на 1", n);
 defaultNumber = n;
 }
 
-function checkofclick (n)
+function checkofclick (n) //проверка уменьшение или увеличение
 	{ 
 	if (isDec)
 		{
@@ -205,7 +205,7 @@ $("#menuLinks").append(generateMenuLinks())
 $('#menuLinks').children().each(function () {
 
 		$(this).on('mouseenter', () => {
-			$(this).css('color', 'Aqua');
+			$(this).css('color', '#CD5C5C');
 		});
 
 		$(this).on('mouseleave', () => {
@@ -229,6 +229,7 @@ $("button").on("click", function()
 	let text = $(this).text().trim()
 	switch (text){
 	case "Запустить калькулятор":payment();
+	case "показать список":list(item);
 	break;
 
 	}
