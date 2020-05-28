@@ -223,4 +223,17 @@ else{
 	}
 
 $("#userName").html(user)
+
+$("button").on("click", function()
+{
+	let text = $(this).text().trim()
+	switch (text){
+	case "Запустить калькулятор":payment();
+	break;
+
+	}
+	console.log($(this).text())
+})
+
+
 });

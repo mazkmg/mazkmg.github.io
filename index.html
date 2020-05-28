@@ -21,26 +21,27 @@
 	
 <div class="content">
 
-	<div  class="logo"> 
-		<img width="400" src ="./images/penrose.png">
-		<h1><span id = "userName"></span>, что будет, если нажать на кнопку?</h1>
-	</div>
+	<span class = "hi"><h1>Привет, <span id = "userName"></span>!</h1></span>
 
-	<button class="button" onclick="inc(defaultNumber)">увеличить</button> <br>
+<!--
+onclick="inc(defaultNumber)"
+onclick="dec(defaultNumber)"
+onclick="checkofclick(defaultNumber)"
+onclick="list(item)"
+onclick="addElement()"
+onclick="setValue()"
+onclick="toggleValue()"
+onclick="payment()"-->
 
-	<button class="button" onclick="dec(defaultNumber)">уменьшить</button> <br>
+	<button class="button" >показать список</button> 
 
-	<button class="button" onclick="checkofclick(defaultNumber)">проверка уменьшение или увеличение</button> <br>
+	<button class="button" >добавить элемент</button>
 
-	<button class="button" onclick="list(item)">показать список</button> <br>
+	<button class="button" >Сохранить значение</button>
 
-	<button class="button" onclick="addElement()">добавить элемент</button><br>
+	<button id="toggle" class="button">Сохранить</button>
 
-	<button class="button" onclick="setValue()">Сохранить значение</button><br>
-
-	<button id="toggle" class="button" onclick="toggleValue()">Сохранить</button><br>
-
-	<button class="button" onclick="payment()">Запустить калькулятор</button><br>
+	<button class="button" >Запустить калькулятор</button>
 
 	<div id="hidevalue">
 

@@ -6,12 +6,13 @@ margin: 0;
 
 body
 {
-background: url("../images/background3.jpg") center;
+background: #2F3238;
 background-repeat: repeat;
 background-size: cover;
 background-position: center;
 margin: 0;
-height: 100%;	
+height: 100%;
+color: white;	
 } 
 
 .header {
@@ -22,7 +23,7 @@ height: 100%;
 
 .fixed-position {
     height: inherit;
-    background: rgba(0, 0, 0);
+    background: #151515;
     position: fixed;
     width: 100%;
     display: flex;
@@ -53,27 +54,35 @@ height: 100%;
     border-radius: 50%;
 }
 
-
-
-.logo
+.hi
 {
-margin: auto;
-text-align: center;
+position: center;
+}
 
-} 
 
 .button
 {
 outline: none;
 border:none;
-position: relative;
 left: 50%;
-transform: translate(-50%, 0);
 color: white;
 text-decoration: none;
 padding: 10px;
 border-radius: 10px;
 background: black;
+cursor: pointer;
+} 
+
+.button:hover
+{
+outline: none;
+border:none;
+left: 50%;
+color: white;
+text-decoration: none;
+padding: 10px;
+border-radius: 10px;
+background: #FA8072;
 cursor: pointer;
 } 
 
