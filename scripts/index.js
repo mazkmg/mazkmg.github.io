@@ -260,6 +260,7 @@ $("button").on("click", function()
 	let text = $(this).text().trim()
 	switch (text){
 	case "Запустить калькулятор":payment();
+	break;
 	case "показать список":list(item);
 	break;
 
