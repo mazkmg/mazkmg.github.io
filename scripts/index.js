@@ -8,6 +8,132 @@ let menuLinks = [
 "КОНТАКТЫ",
 ];
 
+const boxes = [{
+		title: 'Испания',
+		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum nibh arcu, et luctus tellus vulputate molestie. Quisque fringilla hendrerit feugiat. Cras eu tellus sed nisl euismod euismod. Sed molestie, dui quis convallis ultrices, mi leo hendrerit enim, in facilisis elit augue in orci. Suspendisse ut gravida augue. Maecenas eu ultrices ex. Nullam purus ipsum, suscipit et ligula nec, ultricies ullamcorper enim. Integer laoreet iaculis magna sit amet malesuada.',
+		autor: 'Дарт Вейдер',
+		avatar: "./images/avatar_autor.jpg",
+		hasButton: false,
+
+	},
+	{
+		title: 'Австралия',
+		text: 'Nunc viverra tortor eget elementum tempor. Aenean tincidunt mauris sed pulvinar finibus. Nulla vehicula urna a ligula ullamcorper, nec malesuada mauris feugiat. Praesent dui ante, ultricies a lobortis facilisis, pretium id urna. Nullam quis efficitur lectus. Duis consequat ante nunc, a congue lectus congue nec. Mauris fringilla molestie nisl eu bibendum.',
+		autor: 'Гендальф',
+		avatar: "./images/avatar_autor_2.jpg",
+		hasButton: true,
+	},
+	
+];
+
+const product = [{
+		image: "./images/product_1.jpg",
+		title: 'Палатка у озера',
+		prise: '2000',
+		hasButton: true,
+
+	},
+	{
+		image: "./images/product_2.jpg",
+		title: 'Палатка у озера',
+		prise: '3300',
+		hasButton: true,
+	},
+	{
+		image: "./images/product_3.jpg",
+		title: 'Палатка у озера',
+		prise: '1000',
+		hasButton: true,
+	},
+	{
+		image: "./images/product_4.jpg",
+		title: 'Палатка у озера',
+		prise: '3000',
+		hasButton: true,
+	},
+	{
+		image: "./images/product_5.jpg",
+		title: 'Палатка у озера',
+		prise: '3000',
+		hasButton: true,
+	},
+	{
+		image: "./images/product_6.jpg",
+		title: 'Палатка у озера',
+		prise: '3000',
+		hasButton: true,
+	}
+];
+
+function createProductBoxes() {
+	let html = '';
+
+	for (const box of product) {
+		html += `
+		<div class="product_position">
+			<div class="flip-card">
+			  <div class="flip-card-inner">
+			    <div class="flip-card-front">
+			      <img src="${box.image}" alt="Avatar" class="product_image">
+			    </div>
+			    <div class="flip-card-back">
+			      <h1>${box.title}</h1>
+			      <h2>${box.prise} руб/сут</h2>
+			      <button class="button">Запустить калькулятор</button>
+			    </div>
+			  </div>
+			</div>
+		</div>`;
+	}
+	
+	$('#product_container').html(html);
+}
+
+
+
+function createCardBoxes() {
+	let html = '';
+	let button = `<div style="margin-left: 8px">
+						<button>Подробнее</button>
+					</div>`;
+
+	for (const box of boxes) {
+		html += `
+		<div class="box-container">
+			<div>
+				<div class="avatar_position"><img src="${box.avatar}" class="avatar_autor"></div>
+				<div class="box-title">
+					${box.title}
+				</div>
+
+				<div class="box-content">
+					${box.text}
+				</div>
+			</div>
+
+			<div class="box-autor">
+				<div>
+					Автор :
+				</div>
+				<div class="autor">
+					${box.autor}
+				</div>
+				${ hasButton(box.hasButton) }
+			</div>
+
+		</div>`;
+	}
+
+	function hasButton(box) {
+		if (box) {
+			return button;
+		}
+
+		return '';
+	}
+	$('#data_container').html(html);
+}
+
 function inc(n) //увеличиваем число на 1
 {
 n = n+1;
@@ -269,6 +395,6 @@ $("button").on("click", function()
 
 
 })
-
-
+createProductBoxes();
+createCardBoxes();
 });
