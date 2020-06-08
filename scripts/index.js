@@ -6,7 +6,6 @@ let menuLinks = [
 "УСЛУГИ",
 "ПРОЕКТЫ",
 "КОНТАКТЫ",
-"XXX",
 ];
 
 const boxes = [{
@@ -93,7 +92,7 @@ function createProductBoxes() {
 			    <div class="flip-card-back">
 			      <h1>${box.title}</h1>
 			      <h2>${box.prise} руб/сут</h2>
-			      <button class="button">Запустить калькулятор</button>
+			      <button class="button" onclick="payment()">Запустить калькулятор</button>
 			    </div>
 			  </div>
 			</div>
