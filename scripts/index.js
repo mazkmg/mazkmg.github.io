@@ -6,10 +6,11 @@ let menuLinks = [
 "УСЛУГИ",
 "ПРОЕКТЫ",
 "КОНТАКТЫ",
+"XXX",
 ];
 
 const boxes = [{
-		title: 'Испания',
+		title: 'Том Харди',
 		text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean condimentum nibh arcu, et luctus tellus vulputate molestie. Quisque fringilla hendrerit feugiat. Cras eu tellus sed nisl euismod euismod. Sed molestie, dui quis convallis ultrices, mi leo hendrerit enim, in facilisis elit augue in orci. Suspendisse ut gravida augue. Maecenas eu ultrices ex. Nullam purus ipsum, suscipit et ligula nec, ultricies ullamcorper enim. Integer laoreet iaculis magna sit amet malesuada.',
 		autor: 'Дарт Вейдер',
 		avatar: "./images/avatar_autor.jpg",
@@ -17,7 +18,7 @@ const boxes = [{
 
 	},
 	{
-		title: 'Австралия',
+		title: 'Брюс Уиллис ',
 		text: 'Nunc viverra tortor eget elementum tempor. Aenean tincidunt mauris sed pulvinar finibus. Nulla vehicula urna a ligula ullamcorper, nec malesuada mauris feugiat. Praesent dui ante, ultricies a lobortis facilisis, pretium id urna. Nullam quis efficitur lectus. Duis consequat ante nunc, a congue lectus congue nec. Mauris fringilla molestie nisl eu bibendum.',
 		autor: 'Гендальф',
 		avatar: "./images/avatar_autor_2.jpg",
@@ -64,6 +65,19 @@ const product = [{
 		hasButton: true,
 	}
 ];
+
+/* Set the width of the side navigation to 250px and the left margin of the page content to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
 
 function createProductBoxes() {
 	let html = '';

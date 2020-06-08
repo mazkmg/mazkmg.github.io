@@ -18,13 +18,28 @@
 		</div>
 	</div>
 </div>
-<div class="bg"></div>
-<div class="bg_text">Travels</div>
+<div id=menu_container></div>
 
-<div class="content">
+<div class="bg"></div>
+<div class="bg_text">omon</div>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">xxx</span>
+
+<!-- Добавьте все содержимое страницы в этот раздел, если вы хотите, чтобы боковая навигация выдвигала содержимое страницы вправо (не используется, если вы хотите, чтобы sidenav располагался сверху страницы -->
+<div id="main">
+  <div class="content">
 	<div>
-		<h1>Зачем нужны путешествия?</h1>
-		Вне всяких сомнений, путешествия — это лучший способ познавать мир, учиться смотреть на привычные вещи по-новому и расширять горизонты. Мы в momondo верим, что путешествия расширяют сознание и открывают двери в новый мир, где наши отличия становятся источником вдохновения и роста, а не предрассудков и нетерпимости. Мы верим в путешествия и считаем, что каждый, независимо от возраста, пола и финансового положения, должен иметь возможность познавать мир через путешествия.
+		<div><h1>Зачем нужны путешествия?</h1>	</div>
+		<div class="prev">Вне всяких сомнений, путешествия — это лучший способ познавать мир, учиться смотреть на привычные вещи по-новому и расширять горизонты. Мы в momondo верим, что путешествия расширяют сознание и открывают двери в новый мир, где наши отличия становятся источником вдохновения и роста, а не предрассудков и нетерпимости. Мы верим в путешествия и считаем, что каждый, независимо от возраста, пола и финансового положения, должен иметь возможность познавать мир через путешествия.	</div>
+		
 	</div>
 
 <div class="comment"><div id=data_container></div>
@@ -38,6 +53,17 @@
 		<div id=product_container></div>
 	</div>
 </div>
+
+
+
+<!-- Use any element to open the sidenav -->
+<span onclick="openNav()">open</span>
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+  ...
+</div>
+
 <!--
 	<span class = "hi"><h1>Привет, <span id = "userName"></span>!</h1></span>
 
@@ -85,6 +111,8 @@ onclick="payment()"
 <div id="modal"></div> -->
 
 <div id=data_container></div>
+</div>
+
 
 </body>
 
