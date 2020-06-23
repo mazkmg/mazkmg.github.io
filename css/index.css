@@ -1,386 +1,343 @@
-html
+/*https://www.behance.net/gallery/98234521/Travel-agency-website-UXUI-design?tracking_source=search_projects_recommended%7Ctravel*/
+
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=PT+Sans+Narrow&display=swap');
+
+html 
 {
-height: 100%;
-margin: 0;	
-font-family: Roboto, sans-serif;
+ height: 100vh;
 }
 
-body
+body 
 {
-background: #5A5E6A;
-margin: 0;
-height: 100%;
-color: white;	
-} 
-
-.header {
-    height: 60px;
-    width: 100%;
-    position: relative;
-    font-family: Arial;
-    z-index: 3;
+ height: inherit;
 }
 
-/* Боковое навигационное меню */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 0; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 4; /* Stay on top */
-  top: 0;
-  left: 0;
-  background-color: #111; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-
-.fixed-position {
-    height: inherit;
-    background: #151515;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
-    font-size: 18px;
-    line-height: 21px;
-    padding: 8px 16px;
-    box-sizing: border-box;
-}
-
-.item-link {
-    text-decoration: none;
-    color: inherit;
-    transition: .2s ease-in-out;
-}
-
-.item-link:not(:last-child) {
-    margin-right: 8px;
-}
-
-.product_centered{
-	position: relative;
-	display: block;
-}
-
-.product_position{
-	position: relative;
-	display: inline-block;
-}
-
-/*  Контейнер для флип-карт - установите ширину и высоту на то, что вы хотите. Мы добавили свойство border, чтобы продемонстрировать, 
-что сам флип выходит из поля при наведении (удалите перспективу, если вы не хотите, чтобы эффект 3D */
-.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  perspective: 1000px; /* Удалите это, если вы не хотите, чтобы 3D-эффект  */
-}
-
-/* Этот контейнер необходим для размещения передней и задней стороны */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-
-/* 
-Делайте горизонтальный переворот при наведении курсора мыши на контейнер */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-/*Расположите переднюю и заднюю сторону */
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
-  backface-visibility: hidden;
-}
-
-/* 
-Стиль лицевой стороны (запасной вариант, если изображение отсутствует) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-/*Стиль обратной стороны */
-.flip-card-back {
-  background-color: #2F3238;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.product_image{
-width:100%;
-height:100%;
-}
-
-.avatar {
-    width: 48px;
-    height: 48px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 50%;
-}
-.avatar_autor {
-   width: 115px;
-    height: 115px;
-    box-sizing: border-box;
-    background-color: white;
-    border-radius: 100%;
-}
-
-.bg {
-  background: url("../images/bg.jpg");
-  height: 50%;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity:0.7;
-}
-
-.bg_text
+html,
+body 
 {
-background-color: rgb(0,0,0); /* Fallback color */
-background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-color: white;
-font-weight: bold;
-font-size: 80px;
-border: 10px solid #f1f1f1;
-z-index: 2;
-position: absolute; 
-top: 25%;
-left: 35%;
-width: 300px;
-padding: 20px;
-text-align: center;	
+ margin: 0;
 }
 
-
-.button
-{
-outline: none;
-border:none;
-left: 50%;
-color: white;
-text-decoration: none;
-padding: 10px;
-border-radius: 10px;
-background: black;
-cursor: pointer;
-} 
-
-.button:hover
-{
-outline: none;
-border:none;
-left: 50%;
-color: white;
-text-decoration: none;
-padding: 10px;
-border-radius: 10px;
-background: #FA8072;
-cursor: pointer;
-transition: .2s ease-in-out;
-} 
-
-.itemList
+.frame 
 {
 display: flex;
-align-items: center;
-padding: 8px 16px;
+flex-direction: column;
+height: inherit;
 }
 
-
-.delete 
+.header
 {
-border-radius: 50%;
-outline: none;
-border: none;
-background-color: lightgray;
-color: #333;
-width: 24px;
-height: 24px;
-box-sizing: border-box;
-text-align: center;
-vertical-align: middle;
-margin: 0 5px;
+display: flex;
+min-height: 60px;
+position: relative;
+min-height: inherit;
+position: fixed;
+width: 100%;
+flex-direction: row;
+justify-content: space-between;
 }
 
-.delete:hover 
+.logo{
+
+}
+
+.menu_links
+{
+display: flex;
+flex-direction: row;
+box-sizing: border-box;
+}
+
+.menu_links a
+{
+padding: 8px 8px 8px 8px;
+text-decoration: none;
+font-size: 15px;
+color: white;
+display: block;
+transition: 0.3s;
+}
+
+.menu_links a:hover
 {
 background-color: gray;
-color: #fff;
-transition: .3s ease-in-out
 }
 
-
-.target
+.bg_image
 {
-cursor: pointer;
-transition: .2s ease-in-out
+background: url("../images/mounts.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: content-box;
+position: sticky;
+left: 0;
+z-index: -1;
+width: 100%;
+height: auto;
+min-height: 100%;
+justify-content: center;
+box-sizing: border-box;
 }
 
-.row
+.bg_text {
+color: white;
+font-weight: bold;
+font-size: 40px;
+z-index: 2;
+position: absolute;
+top: 45%;
+left: 27%;
+width: 566px;
+text-align: center;
+font-family: 'Balsamiq Sans';
+}
+
+.bg_text_two {
+font-size: 63px;
+}
+
+.content 
 {
-	display: flex;
-}
-
-.modal {
-  display: none; / Hidden by default /
-  position: fixed; / Stay in place /
-  z-index: 1; / Sit on top /
-  left: 0;
-  top: 0;
-  width: 100%; / Full width /
-  height: 100%; / Full height /
-  overflow: auto; / Enable scroll if needed /
-  background-color: rgb(0,0,0); / Fallback color /
-  background-color: rgba(0,0,0,0.4); / Black w/ opacity /
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; / 15% from the top and centered /
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; / Could be more or less, depending on screen size /
-}
-
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.box-container {
-	color: #333;
-    margin: 30px;
-    width: 400px;
-    min-height: 600px;
-    background: #fff;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    padding: 30px;
-    border: 1px solid #e7e8ea;
-    justify-content: space-between;
-}
-
-.avatar_position
-{
-	position: relative;
-	display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-left: 115px;
-
-}
-
-.box-title {
-    font-family: Roboto, sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 48px;
-    line-height: 56px;
-    margin-bottom: 30px;
-
-}
-
-.box-content {
-
-    font-family: Roboto,
-        sans-serif;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 24px;
-    display: flex;
-}
-
-.box-autor {
-font-family: Roboto,
-sans-serif;
-font-style: normal;
-font-size: 18px;
-line-height: 24px;
 display: flex;
-margin-top: 30px;
-
+flex-direction: column;
+flex-grow: 1;
 }
 
-.autor {
-margin-left: 8px;
-color: #118639;
-}
-
-#data_container{
+.about_group
+{
+padding: 60px;	
 display: flex;
-flex-wrap: wrap;
+flex-direction: column;
+justify-content: center;
 }
 
-.prev{
-background-color: white;
-color: black;
+.about_us
+{
+display: flex;
+flex-direction: row;
+box-sizing: border-box;
+min-width: 800px;
+min-height: 500px;
+max-width: 800px;
+max-height: 500px;
+background: #fff;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 8px;
-width: 80%;
-position: relative;
-display: flex;
-margin-bottom: 30px;
 padding: 30px;
 border: 1px solid #e7e8ea;
 justify-content: space-between;
+}
+
+.about_text
+{
+padding-right: 16px;
+}
+
+.about_img
+{
+background: url("../images/bg.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: content-box;	
+min-width: 300px;
+min-height: 400px;
+max-width: 300px;
+max-height: 400px;
+}
+
+
+.our_servies
+{
+display: flex;
+justify-content: space-between;
+}
+
+.servies_icon
+{
+width: 100%;
+height: 500px;
+padding: 15px;
+display: flex;
+margin: 12px;
+flex-wrap: wrap;
+z-index: 1000;
+}
+
+.icon_1
+{
+background: url("../images/icon1.jpg");	
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+
+}
+
+.icon_2
+{
+background: url("../images/icon2.jpg");	
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: content-box;	
+}
+
+.icon_3
+{
+background: url("../images/icon3.jpg");
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: content-box;		
+}
+
+.icon_4
+{
+background: url("../images/icon4.jpg");	
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+box-sizing: content-box;	
+}
+
+.client_contact
+{
+background-color: #FFDCC8;
+min-height: 100px;
+width: 100%;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+padding: 80px;
+}
+
+* {box-sizing:border-box}
+/* Контейнер для слайдшоу */
+.slideshow-container {
+  max-width: 1000px;
+  height: 400px;
+  position: relative;
+  margin: auto;
+}
+
+/* Скрыть изображения по умолчанию */
+.mySlides {
+  display: none;
+}
+
+/* Следующие и предыдущие кнопки */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Расположите «следующую кнопку» вправо */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* При наведении курсора добавьте черный фон с немного прозрачным */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Текст подписи */
+.text_slaid {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Числовой текст (1/3 и т. Д.)*/
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Точки / маркеры / индикаторы */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Затухающая анимация */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+
+.contact_use
+{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+padding: 80px;
+}
+
+.description_contact
+{
+display: flex;
+flex-direction: column;
+}
+
+.contact_img
+{
+background: url("../images/mounts.jpg");
+height: 450px;
+width: 400px;
+border-radius: 10px;	
+}
+
+.footer
+{
+padding: 25px;
+box-sizing: border-box;
+color: #fff;
+display: flex;
+min-height: 100px;
+max-height: 100px;
+background-color: #333;
+flex-grow: 0;
 }
